@@ -14,9 +14,9 @@ type myside int
 
 func CalcSquare(sideLen float64, sidesNum myside) float64 {
 
-	const SidesCircle = 0
-	const SidesTriangle = 3
-	const SidesSquare = 4
+	const SidesCircle myside = 0
+	const SidesTriangle myside = 3
+	const SidesSquare myside = 4
 
 	var result float64
 
