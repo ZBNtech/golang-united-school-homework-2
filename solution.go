@@ -14,18 +14,22 @@ type myside int
 
 func CalcSquare(sideLen float64, sidesNum myside) float64 {
 
+	const SidesCircle = 0
+	const SidesTriangle = 3
+	const SidesSquare = 4
+
 	var result float64
 
-	if sidesNum == 0 {
+	if sidesNum == SidesCircle {
 		result = CalcCircle(sideLen)
-	} else if sidesNum == 3 {
+	} else if sidesNum == SidesTriangle {
 		result = CalcTriangle(sideLen)
-	} else if sidesNum == 4 {
+	} else if sidesNum == SidesSquare {
 		result = CalcRectangle(sideLen)
 	} else {
 		result = 0.0
 	}
-	
+
 	return result
 }
 
