@@ -10,13 +10,13 @@ import "math"
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-type myside int
+type mySide int
 
-func CalcSquare(sideLen float64, sidesNum myside) float64 {
+const SidesCircle mySide = 0
+const SidesTriangle mySide = 3
+const SidesSquare mySide = 4
 
-	const SidesCircle myside = 0
-	const SidesTriangle myside = 3
-	const SidesSquare myside = 4
+func CalcSquare(sideLen float64, sidesNum mySide) float64 {
 
 	var result float64
 
@@ -33,29 +33,29 @@ func CalcSquare(sideLen float64, sidesNum myside) float64 {
 	return result
 }
 
-func CalcRectangle(sideLen float64) float64 {
+func CalcRectangle(recLen float64) float64 {
 
 	var RectangleSquare float64
 
-	RectangleSquare = sideLen * 2
+	RectangleSquare = math.Pow(recLen, 2)
 
 	return RectangleSquare
 }
 
-func CalcTriangle(sideLen float64) float64 {
+func CalcTriangle(triLen float64) float64 {
 
 	var TriangleSquare float64
 
-	TriangleSquare = (sideLen * 2 * math.Sqrt(3.0)) / 4
+	TriangleSquare = (math.Sqrt(3) / 4) * math.Pow(triLen, 2)
 
 	return TriangleSquare
 }
 
-func CalcCircle(sideLen float64) float64 {
+func CalcCircle(cirLen float64) float64 {
 
 	var CircleSquare float64
 
-	CircleSquare = sideLen * 2 * math.Pi
+	CircleSquare = math.Pow(cirLen, 2) * math.Pi
 
 	return CircleSquare
 }
